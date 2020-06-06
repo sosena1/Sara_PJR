@@ -120,13 +120,19 @@ eachYearFrequency %>% ggplot(aes(x=YEAR, y=n)) + geom_point() + geom_area() +
 
 #Wniosek - w kolejnych latach ilosc bohaterow raczej sie zwiekszala
 
+#Najpopularniesze 15 postaci - nie jest to jakos konieczne, bo dane sa posortowane wstepnie, ale jesli by nie byly, to to jest przydatna informacja
+#Wedlug mnie mozesz to spokojnie tutaj zostawic
+mostPopularCharacters <- characters
+mostPopularCharacters <- mostPopularCharacters %>% top_n(15, APPEARANCES)
+mostPopularCharacters
 
 
 #TODO
-#ostatni wykrs polprzezroczysty
-#Kolory w wykresach
+#ostatni wykrs lepiej by wygladal polprzezroczysty
+#Kolory w wykresach mozesz dodac, bo zawsze to ladnie wyglada
 #zmien czcionke z 15 na jakas inna wszedzie, bo to jest identycznie jak u nas => theme(plot.title = element_text(size = 15, hjust=0.5, face= 'bold', margin = ))
 #Mozesz, a nawet powinnas zrobic wykres pokazujacy calkowita liczbe osob w dannych latach 
 #    - przykladowo jesli w 1950 byly 2 osoby, to na wykresie powinno byc dwa, jesli w 1951 doszlo 10 osob, to na wykresie powinno byc 12
 #Nie usuwaj tych pustych danych alignColorAmount <- alignColorAmount[alignColorAmountt$ALIGN != "", ] tylko lepiej jesli bedziesz tam zmieniala nazwe na "Not specified" lub cos w tym stylu
-#Pobierz i zainstaluj sobie pakiet RMarkdown
+#Pobierz i zainstaluj sobie pakiet RMarkdown - przyda sie jak juz bedziesz generowala raport
+#Zmien nazwe "sexAmount_ToNieToCoMysliszSara_chodziOPlec" na cos normalniejszego
